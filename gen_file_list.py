@@ -27,6 +27,12 @@ def convert_include_file_path(command):
     return include_dirs
 
 
+def add_specific_include_dir(hint):
+    if hint.endswith("hal\include"):
+        print(hint+"\hal")
+    print(hint)
+
+
 def gen_file(json_file):
     source_files = set()
     include_dir = set()
@@ -38,7 +44,7 @@ def gen_file(json_file):
     for i in source_files:
         print(i)
     for i in include_dir:
-        print(i)
+        add_specific_include_dir(i)
 
 
 # Press the green button in the gutter to run the script.
